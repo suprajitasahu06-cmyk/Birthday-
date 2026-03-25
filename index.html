@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surprise</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1e1b2e, #2c2a4a, #3a2f4d);
+}
+
+/* container */
+.container {
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 25px rgba(255, 182, 193, 0.3);
+    animation: glow 2s infinite alternate;
+    z-index: 2;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 10px rgba(255,182,193,0.2); }
+    to { box-shadow: 0 0 25px rgba(255,182,193,0.5); }
+}
+
+/* teddy */
+img {
+    width: 170px;
+    margin-bottom: 20px;
+}
+
+/* text */
+#text {
+    font-size: 22px;
+    color: #f8e1f4;
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+/* button */
+#btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    background: #ff8fab;
+    color: white;
+    cursor: pointer;
+    display: none;
+    transition: 0.3s;
+}
+
+#btn:hover {
+    background: #ff6f91;
+    transform: scale(1.05);
+}
+
+/* confetti */
+.confetti {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    opacity: 0.7;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* sparkles */
+.sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: twinkle 1.5s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.2; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUycHIwaHI3MmVuYTRnbGNuaHI2d2NuZWlpZzh4aWUxaXNrOWx1ZjhxNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mRvzQIDr0gHCz82SV0/giphy.gif" alt="teddy cake">
+
+    <div id="text">I have a surprise for you 💗</div>
+
+    <button id="btn" onclick="nextPage()">Click here to see 💗</button>
+</div>
+
+<script>
+// show button
+setTimeout(() => {
+    document.getElementById("btn").style.display = "inline-block";
+}, 2500);
+
+// next page
+function nextPage() {
+    window.location.href = "countdown.html";
+}
+
+// confetti
+for (let i = 0; i < 35; i++) {
+    let conf = document.createElement("div");
+    conf.classList.add("confetti");
+    conf.style.left = Math.random() * 100 + "vw";
+    conf.style.animationDuration = (4 + Math.random() * 4) + "s";
+    conf.style.backgroundColor = ["#ff8fab", "#ffc2d1", "#cdb4db", "#bde0fe"][Math.floor(Math.random()*4)];
+    document.body.appendChild(conf);
+}
+
+// sparkles
+for (let i = 0; i < 25; i++) {
+    let sp = document.createElement("div");
+    sp.classList.add("sparkle");
+    sp.style.top = Math.random() * 100 + "vh";
+    sp.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(sp);
+}
+</script>
+
+</body>
+</html>

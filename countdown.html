@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Countdown</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #2a2a4a, #3a2f4d);
+    color: #fff;
+    text-align: center;
+}
+
+/* container */
+.container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* heading */
+h1 {
+    font-size: 24px;
+    color: #ffd6e0;
+}
+
+/* countdown */
+#countdown {
+    font-size: 28px;
+    margin: 20px 0;
+    letter-spacing: 2px;
+}
+
+/* button */
+#btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background: #ff8fab;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: none;
+}
+
+/* confetti */
+.confetti {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    opacity: 0.7;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* message overlay */
+#messagePage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    color: #333;
+    display: none;
+    overflow-y: auto;
+    padding: 30px;
+    text-align: left;
+    line-height: 1.6;
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Lil piggy's day in.... 🐷💗</h1>
+    <div id="countdown"></div>
+    <button id="btn" onclick="showMessage()">Click to see my secret message 💗</button>
+</div>
+
+<div id="messagePage">
+<p>
+Before you step into the 24th year of your life i just wanna let you know that.......✨<br><br>
+
+As you're going to turn 24 this year 🥹 I wanna share you the 24 best reason why I love you 🫶🏻 It's very difficult to choose this 24 because there infinity reasons to love youuuu 💗<br><br>
+
+1. I love you for making my every ordinary day special 💫<br>
+2. I love you for listening to my every chaos without any judgement 💗<br>
+3. I love you being patient with me 💫<br>
+4. I love you for choosing me everyday even at my worst 💗<br>
+5. I love you for always being caring and kind to me 💫<br>
+6. I love you for your effort, even in small things 💗<br>
+7. I love you for how safe I feel around you 💫<br>
+8. I love you for being my comfort 💗<br>
+9. I love you for supporting me at my lowest phase 💫<br>
+10. I love you for your voice, your words, your presence 💗<br>
+11. I love you for loving me even when I show my worst side 💫<br>
+12. I love you for being my peace in a loud world 💗<br>
+13. I love you for growing with me 💫<br>
+14. I love you for making distance feel smaller than it is 💗<br>
+15. I love you for the way you never give up on us 💫<br>
+16. I love you for the way you calm my overthinking 💗<br>
+17. I love you for how you make even boring conversations feel good 💫<br>
+18. I love you for being my habit that I never want to break 💗<br>
+19. I love you for how you turn my worst moods into happier one 💫<br>
+20. I love you for being someone I can always come back to 💗<br>
+21. I love you beyond reasons… even on days when you’re difficult, I still choose you 💫<br>
+22. I love you in a way that scares me a little, because losing you 💗<br>
+23. I love you not perfectly, but completely 💫<br>
+24. I love you like you’re home to me, not a place, but a feeling I never want to lose 💗<br><br>
+
+These words are so less to explain my feelings for you, I love uhh from the core of my heart ❤️ You just mean the whole world for me 🫂<br><br>
+
+I wish the upcoming year of your life brings a lot of happiness and success to you 🫶🏻 Advance Happy Birthday darling 💌
+</p>
+</div>
+
+<script>
+// countdown to 26 March 12 AM
+let countDownDate = new Date("March 26, 2026 00:00:00").getTime();
+
+let x = setInterval(function() {
+    let now = new Date().getTime();
+    let distance = countDownDate - now;
+
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+        hours + "h " + minutes + "m " + seconds + "s ";
+
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "It's time 💗";
+    }
+}, 1000);
+
+// show button after few seconds
+setTimeout(() => {
+    document.getElementById("btn").style.display = "inline-block";
+}, 4000);
+
+// show message page
+function showMessage() {
+    document.getElementById("messagePage").style.display = "block";
+}
+
+// confetti
+for (let i = 0; i < 40; i++) {
+    let conf = document.createElement("div");
+    conf.classList.add("confetti");
+    conf.style.left = Math.random() * 100 + "vw";
+    conf.style.animationDuration = (4 + Math.random() * 4) + "s";
+    conf.style.backgroundColor = ["#ff8fab", "#ffc2d1", "#cdb4db", "#bde0fe"][Math.floor(Math.random()*4)];
+    document.body.appendChild(conf);
+}
+</script>
+
+</body>
+</html>
