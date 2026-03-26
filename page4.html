@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Our Love Timeline</title><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Poppins:wght@300;500&display=swap" rel="stylesheet"><style>
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#1b1b2f,#162447,#1f4068);
+  color:white;
+  overflow-x:hidden;
+}
+
+/* cinematic sparkle background */
+.sparkle{
+  position:fixed;
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:white;
+  opacity:.4;
+  animation:float 10s linear infinite;
+}
+@keyframes float{
+  from{transform:translateY(100vh);opacity:0}
+  30%{opacity:.6}
+  to{transform:translateY(-10vh);opacity:0}
+}
+
+h1{
+  text-align:center;
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-weight:bold;
+  margin-top:40px;
+  letter-spacing:1px;
+}
+
+.timeline{
+  max-width:1000px;
+  margin:auto;
+  padding:40px 20px 80px;
+}
+
+.card{
+  background:rgba(255,255,255,0.06);
+  border-radius:20px;
+  padding:20px;
+  margin:40px auto;
+  backdrop-filter:blur(14px);
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+  transition:.5s;
+}
+
+.card:hover{
+  transform:translateY(-8px) scale(1.02);
+}
+
+.card img{
+  width:100%;
+  border-radius:16px;
+  margin-top:12px;
+  object-fit:cover;
+}
+
+.date{
+  font-weight:600;
+  color:#ffd6e0;
+  letter-spacing:1px;
+}
+.next-btn{display:block;margin:30px auto 80px;padding:14px 36px;border:none;border-radius:30px;background:linear-gradient(45deg,#ff9a9e,#fad0c4);color:#222;font-weight:600;cursor:pointer;transition:.4s;font-family:'Poppins',sans-serif;} .next-btn:hover{transform:scale(1.08);box-shadow:0 8px 25px rgba(255,182,193,.4);} </style></head><body><script>
+for(let i=0;i<35;i++){
+  let s=document.createElement('div');
+  s.className='sparkle';
+  s.style.left=Math.random()*100+'%';
+  s.style.animationDuration=6+Math.random()*6+'s';
+  document.body.appendChild(s);
+}
+</script><h1>Our Mini Love Story 💌🩷<h1><div class="timeline"><div class="card">
+<div class="date">6 Feb 💟</div>
+<p>our first picture 🫶🏻</p>
+<img src="https://i.postimg.cc/pTk0Y6zr/IMG_20250703_213602_971.jpg">
+</div><div class="card">
+<div class="date">18th Mar 💟</div>
+<p>Our first holi 🫶🏻</p>
+<img src="https://i.postimg.cc/9M1xtnZr/IMG_20250703_213615_385.jpg">
+</div><div class="card">
+<div class="date">December 💟</div>
+<p>First meet-up in Vikash 🫶🏻</p>
+<img src="https://i.postimg.cc/sXKn9N71/IMG_20250703_213621_292.jpg">
+</div><div class="card">
+<div class="date">20th Jan 💟</div>
+<p>Our first date 🫶🏻</p>
+<img src="https://i.postimg.cc/k4wjFpKW/IMG20250120150746.jpg">
+</div><div class="card">
+<div class="date">11 March 💟</div>
+<p>Memories of Nandankanan 🫶🏻</p>
+<img src="https://i.postimg.cc/ydnfXbcF/Snapchat_1269509925.jpg">
+</div><div class="card">
+<div class="date">12 July 💟</div>
+<p>Memories of Esplanade 🫶🏻</p>
+<img src="https://i.postimg.cc/j5v8QFPH/IMG_20250712_WA0067_1.jpg">
+</div><div class="card">
+<div class="date">12 July 💟</div>
+<p>Rain date 🫶🏻</p>
+<img src="https://i.postimg.cc/x8C6s33K/IMG20250712172922.jpg">
+</div><div class="card">
+<div class="date">26 Nov 💟</div>
+<p>Memories of Wonderla 🫶🏻</p>
+<img src="https://i.postimg.cc/Y09dXzzf/Screenshot_2025_11_27_22_20_12_67_99c04817c0de5652397fc8b56c3b3817.jpg">
+</div></div><button class="next-btn" onclick="location.href='final.html'">Final Page →</button>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Final Page — Our Forever</title><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"><style>
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(160deg,#0f0b12,#1a0f17,#120b14);
+  color:white;
+  overflow-x:hidden;
+}
+
+/* Luxury cinematic glow border */
+body:before{
+  content:"";
+  position:fixed;
+  inset:12px;
+  border-radius:20px;
+  border:1px solid rgba(255,120,170,.4);
+  box-shadow:0 0 35px rgba(255,120,170,.25);
+  pointer-events:none;
+}
+
+h1{
+  text-align:center;
+  margin:60px 0 30px;
+  font-family:'Playfair Display',serif;
+  font-size:2.4rem;
+  letter-spacing:1px;
+  color:#ff9acb;
+}
+
+/* Image mosaic */
+.gallery{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:16px;
+  padding:30px;
+}
+
+.gallery img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:14px;
+  opacity:0;
+  transform:scale(.8);
+  animation:fadeZoom 1.2s forwards;
+  box-shadow:0 10px 30px rgba(255,120,170,.25);
+}
+
+.gallery img:nth-child(odd){animation-delay:.3s}
+.gallery img:nth-child(even){animation-delay:.6s}
+
+@keyframes fadeZoom{
+  to{opacity:1;transform:scale(1)}
+}
+
+/* Floating romantic particles */
+.spark{
+  position:fixed;
+  width:3px;
+  height:3px;
+  background:#ff7eb3;
+  border-radius:50%;
+  opacity:.6;
+  animation:float 9s linear infinite;
+}
+
+@keyframes float{
+  from{transform:translateY(0) scale(.6)}
+  to{transform:translateY(-110vh) scale(1.3)}
+}
+
+/* Promise text reveal */
+.promise{
+  max-width:700px;
+  margin:100px auto 120px;
+  text-align:center;
+  line-height:1.8;
+  font-size:1.05rem;
+  opacity:0;
+  transform:translateY(40px);
+  transition:1.5s ease;
+}
+
+.promise.show{
+  opacity:1;
+  transform:translateY(0);
+}
+</style></head>
+<body><h1>Our Beautiful Journey ❤️</h1><div class="gallery">
+<img src="https://i.postimg.cc/59KYQW6V/IMG_20241106_172510_551.jpg">
+<img src="https://i.postimg.cc/DZ2JL2r7/IMG_20241229_120751_559.jpg">
+<img src="https://i.postimg.cc/tRvZnGYQ/IMG_20241106_172950_524.jpg">
+<img src="https://i.postimg.cc/SsDXGwdD/IMG_20250703_213614_953.jpg">
+<img src="https://i.postimg.cc/7hh5tmQq/IMG_20250120_184218.jpg">
+<img src="https://i.postimg.cc/zB0Lk97p/IMG_20250703_213726_697.jpg">
+<img src="https://i.postimg.cc/B6M8Cdpp/IMG_20250703_213621_564.jpg">
+<img src="https://i.postimg.cc/76mCNp9N/IMG_20250716_194336_428.jpg">
+<img src="https://i.postimg.cc/MTWMVW7K/IMG_20250703_213742_805.jpg">
+<img src="https://i.postimg.cc/RCp6JxqY/IMG20250712161636.jpg">
+<img src="https://i.postimg.cc/qRjtG9wN/IMG_20251127_WA0108.jpg">
+<img src="https://i.postimg.cc/fWqtSQk5/IMG20250712162853.jpg">
+<img src="https://i.postimg.cc/NGC92v5Y/IMG20250712165212.jpg">
+<img src="https://i.postimg.cc/xjpJNVcS/IMG20250712165641.jpg">
+<img src="https://i.postimg.cc/B6qLHqTv/Screenshot_2025_11_30_16_20_17_55_99c04817c0de5652397fc8b56c3b3817.jpg">
+<img src="https://i.postimg.cc/Qt0BqRm8/Snapchat_1184926283.jpg">
+<img src="https://i.postimg.cc/zB0Lk97J/Snapchat_1332052715.jpg">
+<img src="https://i.postimg.cc/ZRTBpT8W/Snapchat_191262398.jpg">
+<img src="https://i.postimg.cc/SKmNtgJW/IMG_20241229_120646_015.jpg">
+<img src="https://i.postimg.cc/NMpyxWDr/Snapchat_92079973.jpg">
+<!-- Extra 4 images added -->
+<img src="https://i.postimg.cc/59KYQW6V/IMG_20241106_172510_551.jpg">
+<img src="https://i.postimg.cc/DZ2JL2r7/IMG_20241229_120751_559.jpg">
+<img src="https://i.postimg.cc/tRvZnGYQ/IMG_20241106_172950_524.jpg">
+<img src="https://i.postimg.cc/SsDXGwdD/IMG_20250703_213614_953.jpg">
+</div><div class="promise" id="promise">
+I don’t know what the future holds… but one thing I know for sure —
+I’ll keep choosing you, loving you, growing with you. I love you so much❤️
+</div><script>
+/* romantic particles */
+for(let i=0;i<40;i++){
+ let s=document.createElement('div');
+ s.className='spark';
+ s.style.left=Math.random()*100+'vw';
+ s.style.animationDuration=6+Math.random()*6+'s';
+ document.body.appendChild(s);
+}
+
+/* promise reveal on scroll */
+window.addEventListener('scroll',()=>{
+ const el=document.getElementById('promise');
+ if(window.scrollY>500) el.classList.add('show');
+});
+</script></body>
+</html>

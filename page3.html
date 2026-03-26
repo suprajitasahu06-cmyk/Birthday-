@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Memories Page</title><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Poppins:wght@300;500&display=swap" rel="stylesheet"><style>
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#F7E7CE;
+  overflow-x:hidden;
+}
+
+/* Decorative border */
+body:before{
+  content:"";
+  position:fixed;
+  inset:12px;
+  border:2px solid #E8B4B8;
+  pointer-events:none;
+  border-radius:18px;
+}
+
+h1{
+  text-align:center;
+  margin-top:40px;
+  font-family:'Playfair Display',serif;
+  font-size:2.1rem;
+  font-weight:bold;
+  font-style:italic;
+  color:#B76E79;
+}
+
+.container{
+  max-width:1100px;
+  margin:50px auto 80px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:35px;
+  padding:20px;
+}
+
+.flip-card{
+  width:230px;
+  height:230px;
+  perspective:1000px;
+}
+
+.flip-inner{
+  width:100%;
+  height:100%;
+  position:relative;
+  transform-style:preserve-3d;
+  transition:transform 0.7s ease;
+}
+
+.flip-card:hover .flip-inner{
+  transform:rotateY(180deg);
+}
+
+.front,.back{
+  position:absolute;
+  width:100%;
+  height:100%;
+  border-radius:16px;
+  backface-visibility:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:15px;
+}
+
+.front{
+  background:#E8B4B8;
+  color:white;
+  font-weight:500;
+}
+
+.back{
+  background:#fff;
+  transform:rotateY(180deg);
+  flex-direction:column;
+}
+
+.back img{
+  width:110px;
+  margin-bottom:14px;
+}
+
+.next-btn{
+  display:block;
+  margin:30px auto 60px;
+  padding:12px 30px;
+  border:none;
+  border-radius:30px;
+  background:#B76E79;
+  color:white;
+  font-size:1rem;
+  cursor:pointer;
+}
+
+/* Floating hearts animation */
+.heart{
+  position:fixed;
+  bottom:-20px;
+  color:#E8B4B8;
+  animation:floatUp linear infinite;
+  opacity:.6;
+}
+
+@keyframes floatUp{
+  from{transform:translateY(0) scale(.8);}
+  to{transform:translateY(-110vh) scale(1.2);}
+}
+
+/* Premium secret message popup */
+.secret-btn{
+  display:block;
+  margin:30px auto 50px;
+  padding:12px 32px;
+  border:none;
+  border-radius:30px;
+  background:#B76E79;
+  color:#fff;
+  font-size:1rem;
+  cursor:pointer;
+  letter-spacing:.5px;
+}
+
+.secret-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:.4s;
+}
+
+.secret-modal.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.secret-content{
+  background:#fff7f8;
+  padding:28px 32px;
+  border-radius:18px;
+  max-width:420px;
+  text-align:center;
+  color:#B76E79;
+  font-weight:500;
+  transform:scale(.8);
+  transition:.4s;
+}
+
+.secret-modal.show .secret-content{
+  transform:scale(1);
+}
+</style></head>
+<body><h1> 💗 Our Beautiful Memories💗</h1><div class="container"><div class="flip-card">
+<div class="flip-inner">
+<div class="front">Proposal day 💘<br>14th Oct 2021 🫶</div>
+<div class="back"><img src="https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyeTdxMWh6bjhseHZodnc3NjM5Yms5YjFyOXFxY3QzN2RmNzU4aXB5MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SYo1DFS8NLhhqzzjMU/giphy.gif"><p>I remember kese uss din gussa hoke block kar diye they😒,but that night you finally confess your feelings 🙈.</p></div>
+</div></div><div class="flip-card">
+<div class="flip-inner">
+<div class="front">Our First call 💓<br>1st Aug 2021🫶 </div>
+<div class="back"><img src="https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyc3FmbHN3ODBwbHR0YWhvcnBieTNkc3l4bmV2NXdrdTgxMHV4am8yZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Wopg1mZqst26bQYdMK/giphy.gif"><p>It was good 🤭 thoda nervous thoda awkward aur aapka toh gala kharab tha  🤭🫶</p></div>
+</div></div><div class="flip-card">
+<div class="flip-inner">
+<div class="front">First kiss💋🙈<br>4th Feb 2022 🫶</div>
+<div class="back"><img src="https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyMGxvbm5ld2F3dndvczg5dm5saGNtZXB1YXpubTY0MHlxbW40a3YwdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qKQQUKSSbWBkO2V3KX/giphy.gif"><p>That feeling of first kiss still gives me goosebumps, it was just amazing🙈.Kya din they woh v andhere main milna 🤭</p></div>
+</div></div><div class="flip-card">
+<div class="flip-inner">
+<div class="front">Early days Video calls🫶<br>💌🩷</div>
+<div class="back"><img src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyMW4zMThycG8yc2hqaDBuOTVmaGFvYmc5eGhxYTVtanVubHk1Z3ZsMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1JmGiBtqTuehfYxuy9/giphy.gif"><p>Those days and random vc 🥹.kese ek dusre k funny ss lete they 🤭, miss those days💕</p></div>
+</div></div><div class="flip-card">
+<div class="flip-inner">
+<div class="front">First date🫂💟 <br>20th jan 2025💕</div>
+<div class="back"><img src="https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyeDNhbDBrZTNyeHRocnhodXh4aXVkcjhuNjgxN28xZXZ3cWQ4YzFqOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IzXiddo2twMmdmU8Lv/giphy.gif"><p>Kabhu expect nahi kiya tha ki phele date par eye checkup k liye jaungi 🤭 but that day i fell in love with you again🥹</p></div>
+</div></div><div class="flip-card">
+<div class="flip-inner">
+<div class="front">Fav memories💕<br>🫂</div>
+<div class="back"><img src="https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyNTF4MWRhYWJ4YzE5OWMxajBiOGp4emZvcXR6aXliYnlycm11ZG92bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tfrLxcQkvKsRCbNjHy/giphy.gif"><p>Nandankan aur wonderla  woh sab romantic moments and isckon main woh deep talks, it made me realise that i've chosen the best person🫂💗</p></div>
+</div></div></div><button class="secret-btn" onclick="openSecret()">Unlock Secret 💌</button>
+
+<div id="secretModal" class="secret-modal" onclick="closeSecret()">
+  <div class="secret-content" onclick="event.stopPropagation()">
+    I just wanna tell you that aapke saath spent kiya hua har time is special and memorable for me🫂💗. I love you so much💗
+  </div>
+</div><button class="next-btn" onclick="goNext()">Next Page ➜</button>
+
+<div id="pageTransition" style="position:fixed;inset:0;background:#F7E7CE;opacity:0;pointer-events:none;transition:opacity .8s"></div><script>
+function openSecret(){
+ document.getElementById('secretModal').classList.add('show');
+ createSparkles();
+}
+function closeSecret(){
+ document.getElementById('secretModal').classList.remove('show');
+}
+
+function goNext(){
+ const t=document.getElementById('pageTransition');
+ t.style.opacity=1;
+ setTimeout(()=>{ window.location.href='page4.html'; },800);
+}
+
+/* floating hearts */
+for(let i=0;i<25;i++){
+ let h=document.createElement('div');
+ h.className='heart';
+ h.innerHTML='❤';
+ h.style.left=Math.random()*100+'vw';
+ h.style.animationDuration=(6+Math.random()*6)+'s';
+ document.body.appendChild(h);
+}
+
+/* rose petal confetti */
+function createSparkles(){
+ for(let i=0;i<14;i++){   /* fewer particles = luxury subtle */
+   let s=document.createElement('div');
+   s.className='sparkle';
+   s.style.left=Math.random()*100+'vw';
+   s.style.animationDuration=(8+Math.random()*6)+'s';
+   s.style.animationDelay=(Math.random()*2)+'s';
+   document.body.appendChild(s);
+   setTimeout(()=>s.remove(),14000);
+ }
+}
+
+const style=document.createElement('style');
+style.innerHTML=`
+.sparkle{
+ position:fixed;
+ top:-10px;
+ width:6px;
+ height:6px;
+ border-radius:50%;
+ background:radial-gradient(circle,#fff,#ffd6e0 60%,transparent 70%);
+ box-shadow:0 0 12px rgba(255,255,255,.8),0 0 18px rgba(255,182,193,.6);
+ opacity:.55;
+ animation:luxFall linear forwards;
+ pointer-events:none;
+}
+
+@keyframes luxFall{
+ 0%{transform:translateY(-20px) scale(.8);opacity:0}
+ 20%{opacity:.6}
+ 100%{transform:translateY(110vh) scale(1.2);opacity:0}
+}
+
+@media (max-width:600px){
+ .sparkle{width:4px;height:4px;box-shadow:0 0 8px rgba(255,255,255,.7)}
+}
+`;
+document.head.appendChild(style);
+</script></body>
+</html>

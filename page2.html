@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Love ❤️</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Georgia, serif;
+  background:linear-gradient(135deg,#3a1f4f,#2b153a);
+  overflow-x:hidden;
+  text-align:center;
+  color:white;
+}
+
+/* Floating hearts */
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:16px;
+  opacity:.3;
+  animation:float 8s linear infinite;
+}
+@keyframes float{
+  from{transform:translateY(0);}
+  to{transform:translateY(-110vh);}
+}
+
+/* Card */
+.card{
+  margin:80px auto;
+  width:85%;
+  max-width:420px;
+  padding:30px;
+  background:#ffffff15;
+  border-radius:20px;
+  border:2px solid #ff9bb3;
+}
+
+/* Button */
+button{
+  padding:12px 28px;
+  border:none;
+  border-radius:30px;
+  background:#ff4d6d;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  margin-top:15px;
+}
+
+/* Message paragraphs */
+.message p{
+  opacity:0;
+  transform:translateY(20px);
+  transition:1s ease;
+  font-weight:bold;
+  line-height:1.8;
+}
+
+.message.show p{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.next-btn{
+  display:none;
+}
+</style>
+</head>
+
+<body>
+
+<script>
+/* floating hearts */
+for(let i=0;i<20;i++){
+ let h=document.createElement("div");
+ h.className="heart";
+ h.innerHTML="❤";
+ h.style.left=Math.random()*100+"vw";
+ h.style.animationDuration=(6+Math.random()*6)+"s";
+ document.body.appendChild(h);
+}
+</script>
+
+<div class="card">
+<h2>Dear Piggy❤️ </p>
+Please click here To read my sweet message for You 🙈 </h2>
+<button onclick="openMsg()">Click Me 🐷❤️</button>
+
+<div class="message" id="msg">
+
+<p>Happy Valentine's Day my love 💕 It's been 4 years of togetherness but still It's feel the same as the first day 🥹. Aap na mere sab kuch ho, my home, my comfort my emotional punching bag 🤭 like you are my everything 🫶🏻.</p>
+
+<p>I know itna easy nahi tha yeh 4 years, we've gone through a lot of struggle, misunderstanding, emotional breakdown and so many things but I'm really very thankful to you that you never gave up on me 🥺 Thank you so much for always choosing me babyyy ❤️ Humara harr fight at the end mujhe new reason deta hai that I have chosen the best person who me sooo much 🫶🏻</p>
+
+<p>May be aapko lagta hoga ki main aapse utna pyar nhi karti, cheezen chupati hun aapke expectations fulfill nhi kar paati 🥲 but trust me I will give the best one day which you really deserve ❤️ Sorry for being rude, mean and misunderstanding you sometimes 🥲 but You know I love you so much and aapke liye na i can do anything 🫶🏻</p>
+
+<p>But yeh time thoda tough hai cause hum dono ko humare future ke liye struggle karna hoga, and I promise ki whenever you need me I'll be there, aapke ups and downs, aapke success, failures, mood off wale din.... humesa main rahungi aapke saath 🫂 I wanna grow up with you 🫶🏻 , wanna share each and every memory of my life with you 🥹.</p>
+
+<p>So, this valentine's i promise you that main humesa rahungi aapke saath in every situation, no matter how worse the things would be I'll always choose you over anything ❤️ and I'll try to change my every habit and things jo aapko hurt karen 🫶🏻</p>
+
+<p>At the end but not the least I wanna say you that I love uhh to the moon and back 💖 and always gonna thankful to God that I met you and thankful to you for accepting all my flaws and choose to love me 🫶🏻.</p>
+
+<p>Again Happy valentine's day jaanu ❤️</p>
+
+<p>~ With all my love <br>Aapki chaprii 🙈</p>
+
+</div>
+
+<button class="next-btn" id="nextBtn"
+onclick="location.href='page3.html'">
+Click here to see next surprise ❤️ ➜
+</button>
+
+</div>
+
+<script>
+function openMsg(){
+ let msg=document.getElementById("msg");
+ let paras=msg.querySelectorAll("p");
+
+ msg.classList.add("show");
+
+ paras.forEach((p,i)=>{
+  setTimeout(()=>{
+    p.style.opacity="1";
+    p.style.transform="translateY(0)";
+  }, i*900);
+ });
+
+ document.getElementById("nextBtn").style.display="inline-block";
+}
+</script>
+
+</body>
+</html>
